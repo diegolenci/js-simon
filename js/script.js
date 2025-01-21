@@ -23,9 +23,7 @@ function gioca(){
 
     if( counter === 0){
         clearInterval(inserisciNumeri)
-        form.innerHTML = form
         form.classList.remove('d-none')
-        form.classList.add('d-block')
     } else{
         countdown.innerHTML = counter--
     }
