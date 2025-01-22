@@ -54,17 +54,25 @@ function gioca(){
 
 const btn = document.querySelector('.btn-primary')
 const inputs = document.querySelectorAll('.form-control')
-const arrayNumeriUtente = []
+const numeriCorretti = []
+const message = document.getElementById('message')
 
 console.log(inputs)
 
 btn.addEventListener('click', function(event){
     event.preventDefault()
     for( let i =0; i < inputs.length; i++){
-        arrayNumeriUtente.push( inputs[i].value )
+        
+        if( numArray.includes( parseInt(inputs[i].value)) ){
+            numeriCorretti.push( inputs[i].value )
+        }
+
+        console.log(numeriCorretti, inputs[i].value, numArray.includes( parseInt(inputs[i].value)))
+        
     }
 
-    console.log( arrayNumeriUtente )
+    message.innerHTML = `Complimenti hai indovinato: ${ numeriCorretti.length }, e sono${numeriCorretti.join("-")}`
+
 })
 
 
