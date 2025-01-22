@@ -52,7 +52,20 @@ function gioca(){
 }
 
 
-const bottone = document.getElementsByClassName('btn')
+const btn = document.querySelector('.btn-primary')
+const inputs = document.querySelectorAll('.form-control')
+const arrayNumeriUtente = []
+
+console.log(inputs)
+
+btn.addEventListener('click', function(event){
+    event.preventDefault()
+    for( let i =0; i < inputs.length; i++){
+        arrayNumeriUtente.push( inputs[i].value )
+    }
+
+    console.log( arrayNumeriUtente )
+})
 
 
 
