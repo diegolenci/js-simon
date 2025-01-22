@@ -1,14 +1,25 @@
 //GENERAZIONE 5 NUMERI RANDOM
 const numberList = document.getElementById('numbers-list')
+const numArray = []
 
+function numRandom(min,max){
+    return Math.floor(Math.random() * max) + min;
+}
 
-for (let i = 0; i < 5; i++) {
-    let count = 0;
-    for (let j = 0; j < Math.floor(Math.random() * 100) + 1; j++) {
-        count++;
+for (let i = 0; numArray.length < 5; i++){
+    
+    let numRandomico = numRandom( 1, 50 )
+    console.log(`il tuo numero random è ${numRandomico}`)
+
+    if( !(numArray.includes( numRandomico ))){
+        numArray.push( numRandomico )
     }
-    console.log(count);
-    numberList.innerHTML = count
+
+    console.log(numArray)
+}
+//STAMPO ELEMNTI ARRAY(NUMERI) NELLA LISTA IN PAGINA
+for(let i=0; i < numArray.length; i++){
+    numberList.innerHTML += `<li>${ numArray[i]}</li>`
 }
 
 
